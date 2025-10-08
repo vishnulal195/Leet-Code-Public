@@ -1,6 +1,7 @@
 public class Solution {
     public string LongestCommonPrefix(string[] strs) {
-        string commonPrefix = strs[0];               
+        string commonPrefix = strs[0];  
+                    
         for(int i=1;i<strs.Length;i++)
         {
            int j=0;
@@ -9,12 +10,12 @@ public class Solution {
            {
             j++;            
            }
-       string result="";
+        var sb = new System.Text.StringBuilder();
        for(int k=0; k<j; k++)
         {
-         result+=commonPrefix[k];
+         sb.Append(commonPrefix[k]);
         }
-         commonPrefix=result;
+         commonPrefix=sb.ToString();
         }
         if(commonPrefix==""){
             return "";
