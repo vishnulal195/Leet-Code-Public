@@ -1,9 +1,6 @@
 public class Solution {
     public string LongestCommonPrefix(string[] strs) {
-        string commonPrefix = strs[0];
-        string firstWord=commonPrefix;
-         
-         int prefixLength=0;
+        string commonPrefix = strs[0];               
         for(int i=1;i<strs.Length;i++)
         {
            int j=0;
@@ -12,9 +9,8 @@ public class Solution {
            {
             j++;            
            }
-        prefixLength=j;
        string result="";
-       for(int k=0; k<prefixLength; k++)
+       for(int k=0; k<j; k++)
         {
          result+=commonPrefix[k];
         }
