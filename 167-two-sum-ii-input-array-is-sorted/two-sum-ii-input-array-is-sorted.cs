@@ -1,28 +1,24 @@
 public class Solution {
     public int[] TwoSum(int[] numbers, int target) 
     {
-        int[] indices=new int[2];
-       for(int i=0; i<numbers.Length-1; i++)
-       {
-        int right = numbers.Length-1;
-        while(i<right)
+        int left =0;
+        int right =numbers.Length-1;
+        while(left<right)
         {
-          int sum = numbers[i]+numbers[right];
-        if(sum ==target)
-        {
-         indices= new int[] {i+1,right+1};
-         return indices;
-        }
-        else if(sum<target)
-        {
-          i++;
-        }
-        else if(sum>target){
+          int sum = numbers[left]+numbers[right];
+          if(sum==target)
+          {
+           return new int[]{left+1,right+1};
+          }
+          else if(sum<target)
+          {
+           left++;
+          }
+          else if(sum>target)
+          {
             right--;
+          }
         }
-        }
-        
-       } 
-       return indices;
+        return  Array.Empty<int>();
     }
 }
